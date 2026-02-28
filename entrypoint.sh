@@ -19,5 +19,6 @@ google-chrome --no-sandbox \
 	--disable-dev-shm-usage \
 	--disable-gpu \
 	--remote-debugging-port=$DEBUG_PORT \
-	--remote-debugging-address=$0.0.0.0 \
-	--no-default-browser-check
+	--remote-debugging-address=0.0.0.0 \
+	--no-default-browser-check \
+	--user-data-dir=/tmp/chrome-data
