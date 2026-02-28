@@ -3,8 +3,8 @@
 FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND noninteravtive
-ENV DEBUG_PORT 9222
-ENV VNC_PORT 5900
+ENV DEBUG_PORT 9223
+ENV VNC_PORT 5901
 ENV VNC_PASSWORD hyperaccs
 ENV DISPLAY :99
 
@@ -27,5 +27,5 @@ COPY entrypoint.sh entrypoint.sh
 RUN chmod +x entrypoint.sh
 
 ENTRYPOINT ["/bin/bash", "-c", "./entrypoint.sh"]
-EXPOSE $DEBUG_PORT $VNC_PORT
+EXPOSE 9223 5901
 
