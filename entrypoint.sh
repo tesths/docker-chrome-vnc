@@ -15,8 +15,19 @@ while ! pgrep "x11vnc" > /dev/null; do
     sleep .1
 done
 
-google-chrome --no-sandbox \
+google-chrome --disable-blink-features=AutomationControlled \
 	--disable-dev-shm-usage \
+	--no-sandbox \
+	--disable-setuid-sandbox \
+	--disable-infobars \
+	--disable-extensions \
+	--disable-background-networking \
+	--disable-sync \
+	--disable-translate \
+	--metrics-recording-only \
+	--mute-audio \
+	--no-first-run \
+	--safebrowsing-disable-auto-update \
 	--disable-gpu \
 	--remote-debugging-port=$DEBUG_PORT \
 	--remote-debugging-address=0.0.0.0 \
